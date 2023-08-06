@@ -1,0 +1,457 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "sfcc commerce",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "CaptureUserBrowsingPref",
+          "slots": [
+            {
+              "name": "loginPref",
+              "type": "guestOrRegisteredPref"
+            }
+          ],
+          "samples": [
+            "please {loginPref}",
+            "continue me as {loginPref}",
+            "I would like to browse as {loginPref}",
+            "I would like to continue as {loginPref} customer",
+            "I want to {loginPref}",
+            "{loginPref}"
+          ]
+        },
+        {
+          "name": "CaptureUserSearchedItems",
+          "slots": [
+            {
+              "name": "userSearchItem",
+              "type": "userSearchTerm"
+            }
+          ],
+          "samples": [
+            "help me finding {userSearchItem}",
+            "help me find {userSearchItem}",
+            "i\u0027m looking for {userSearchItem}",
+            "get me good {userSearchItem}",
+            "find me good {userSearchItem}",
+            "get me a good {userSearchItem}",
+            "find me a good {userSearchItem}",
+            "can you look for {userSearchItem}",
+            "help me in finding {userSearchItem}",
+            "get me a {userSearchItem}",
+            "get me {userSearchItem}",
+            "find me {userSearchItem}",
+            "find me a {userSearchItem}"
+          ]
+        },
+        {
+          "name": "AddUserItemsToBasket",
+          "slots": [
+            {
+              "name": "itemIndex",
+              "type": "addItemType"
+            }
+          ],
+          "samples": [
+            "please add {itemIndex}",
+            "add {itemIndex} only",
+            "Add {itemIndex}"
+          ]
+        },
+        {
+          "name": "CaptureCustomerPlaceOrder",
+          "slots": [],
+          "samples": [
+            "place the order",
+            "yes place the order",
+            "yeah go ahead",
+            "yes go ahead",
+            "please continue",
+            "please go ahead",
+            "yes please process the order",
+            "go ahead",
+            "yes please place the order",
+            "please process the order",
+            "yes please go ahead"
+          ]
+        },
+        {
+          "name": "CaptureCustomerLogin",
+          "slots": [
+            {
+              "name": "userNameAndPassword",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "username is {userNameAndPassword}",
+            "My username is {userNameAndPassword}",
+            "My user name is {userNameAndPassword}",
+            "user name is {userNameAndPassword}"
+          ]
+        },
+        {
+          "name": "CreateCustomerAccount",
+          "slots": [
+            {
+              "name": "customerUserNameAndPassword",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "keep username to {customerUserNameAndPassword}",
+            "keep my {customerUserNameAndPassword}",
+            "username should be {customerUserNameAndPassword}",
+            "I would like to keep {customerUserNameAndPassword}",
+            "My new username should be {customerUserNameAndPassword}",
+            "keep my username to {customerUserNameAndPassword}"
+          ]
+        },
+        {
+          "name": "CustomerName",
+          "slots": [
+            {
+              "name": "customerFullName",
+              "type": "AMAZON.Actor"
+            }
+          ],
+          "samples": [
+            "My full name is {customerFullName}",
+            "name is {customerFullName}",
+            "My name is {customerFullName}"
+          ]
+        },
+        {
+          "name": "CreateAccountConsent",
+          "slots": [],
+          "samples": [
+            "go ahead create the account",
+            "go ahead and create my account",
+            "go ahead with the account creation",
+            "yeah sure create the account",
+            "yeah create the account",
+            "please create the account",
+            "yes create the account",
+            "yes please create the account"
+          ]
+        },
+        {
+          "name": "CreateCustomerWishlist",
+          "slots": [],
+          "samples": [
+            "yes add remaining items to my wishlist",
+            "yes add to my wishlist",
+            "yeah add remaining items to my wishlist",
+            "add to my wishlist",
+            "create wishlist",
+            "yes create wishlist",
+            "yes create my wishlist",
+            "yes please add them to my wishlist",
+            "yes add other items to wishlist",
+            "yes add other items to my wishlist",
+            "yeah add other items to my wishlist",
+            "yeah add other items to wishlist",
+            "yeah please add other items to wishlist",
+            "yes please add other items to my wishlist"
+          ]
+        },
+        {
+          "name": "OrderPlaceConfirmation",
+          "slots": [],
+          "samples": [
+            "place order later",
+            "I will place order later",
+            "place the order later",
+            "will place the order later",
+            "I will place the order later",
+            "no thanks i will do this later",
+            "no thanks i will do it later",
+            "no thakyou i will do it later",
+            "I will do this later",
+            "no thakyou i will do this later",
+            "please do it later",
+            "will do it later",
+            "I will do it later"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "no",
+                "synonyms": [
+                  "I will do it later",
+                  "no thank you I will do it later",
+                  "no thank you",
+                  "I do not",
+                  "nope"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "yes",
+                "synonyms": [
+                  "yeah please",
+                  "please do",
+                  "do it now",
+                  "please do it now",
+                  "you know it",
+                  "yes please",
+                  "I do",
+                  "yeah",
+                  "yep"
+                ]
+              }
+            }
+          ],
+          "name": "yesNoType"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "registered",
+                "synonyms": [
+                  "login",
+                  "log me",
+                  "log me in",
+                  "login",
+                  "logged in"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "guest",
+                "synonyms": [
+                  "as guest",
+                  "guest"
+                ]
+              }
+            }
+          ],
+          "name": "guestOrRegisteredPref"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "username",
+                "synonyms": [
+                  "vivek.sh2710@gmail.com"
+                ]
+              }
+            }
+          ],
+          "name": "userName"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "password",
+                "synonyms": [
+                  "Mars@2021",
+                  "Mars@1992"
+                ]
+              }
+            }
+          ],
+          "name": "userPassword"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "electronics-mobile-phones",
+                "synonyms": [
+                  "phones",
+                  "Mobile Phones"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "jean",
+                "synonyms": [
+                  "denim jeans",
+                  "jeans"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "womens-clothing-bottoms",
+                "synonyms": [
+                  "bottoms",
+                  "bottoms for women"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "womens-outfits",
+                "synonyms": [
+                  "outfits"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "womens-clothing-tops",
+                "synonyms": [
+                  "Tops"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "newarrivals",
+                "synonyms": [
+                  "popular in trend",
+                  "new arrivals",
+                  "New items "
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "mens-clothing-suits",
+                "synonyms": [
+                  "suits"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "mens-accessories-gloves",
+                "synonyms": [
+                  "gloves"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "mens-accessories-ties",
+                "synonyms": [
+                  "ties"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "mens-shorts",
+                "synonyms": [
+                  "half pants",
+                  "shorts"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "mens-clothing-jackets",
+                "synonyms": [
+                  "Casual Spring Easy Jacket   ",
+                  "Modern Blazer ",
+                  "Summer Bomber Jacket ",
+                  "jackets"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "mens-clothing-dress-shirts",
+                "synonyms": [
+                  "formal shirts",
+                  "denim shirts",
+                  "dress shirts",
+                  "shirts"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "mens-clothing-pants",
+                "synonyms": [
+                  "trousers",
+                  "pants"
+                ]
+              }
+            }
+          ],
+          "name": "userSearchTerm"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "all",
+                "synonyms": [
+                  "all of them"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "1",
+                "synonyms": [
+                  "firts",
+                  "first only",
+                  "first one",
+                  "first item"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "3",
+                "synonyms": [
+                  "third only",
+                  "third",
+                  "third item",
+                  "third one"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "2",
+                "synonyms": [
+                  "second only",
+                  "second one",
+                  "second item",
+                  "second"
+                ]
+              }
+            }
+          ],
+          "name": "addItemType"
+        }
+      ]
+    }
+  },
+  "version": "64"
+}
